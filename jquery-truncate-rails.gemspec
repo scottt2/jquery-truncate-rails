@@ -1,27 +1,23 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jquery/truncate/rails/version'
+# -*- encoding: utf-8 -*-
+require File.expand_path('../lib/jquery-truncate-rails/version', __FILE__)
 
-Gem::Specification.new do |spec|
-  spec.name          = "jquery-truncate-rails"
-  spec.version       = Jquery::Truncate::Rails::VERSION
-  spec.authors       = ["Tyler Scott"]
-  spec.email         = ["scottt2@uw.edu"]
-  spec.description   = %q{jQuery-Truncate plugin}
-  spec.summary       = %q{jQuery-Truncate packaged all up in a gem just for you.}
-  spec.homepage      = "https://github.com/scottt2/jquery-truncate-rails"
-  spec.license       = "MIT"
+Gem::Specification.new do |gem|
+  gem.authors       = ["Tyler Scott"]
+  gem.email         = ["scottt2@uw.edu"]
+  gem.description   = %q{jQuery Truncate plugin}
+  gem.summary       = %q{jQuery Truncate packaged all up in a gem just for you.}
+  gem.homepage      = "https://github.com/scottt2/jquery-truncate-rails"
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  gem.files         = `git ls-files`.split($\)
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.name          = "jquery-truncate-rails"
+  gem.require_paths = ["lib"]
+  gem.version       = Jquery::Truncate::Rails::VERSION
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
-  spec.add_dependency 'railties', '>= 3.1.0'
+  gem.add_dependency 'railties', '>= 3.1.0'
 
-  spec.add_development_dependency 'rails'
-  spec.add_development_dependency 'jquery-rails'
+  gem.add_development_dependency 'rails'
+  gem.add_development_dependency 'jquery-rails'
+  gem.add_development_dependency 'uglifier'
 end
